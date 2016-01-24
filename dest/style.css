@@ -1,8 +1,30 @@
-th {
-  text-align: left;
+body {
+  padding: 5em 1.5em 1.5em;
 }
 
-.lineKey {
+.my-navbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  border-radius: 0;
+}
+
+/* ===== partial for Lines Component ===== */
+.lines {
+  list-style: none;
+}
+
+.lines .lineItem {
+  color: #06C;
+}
+
+.lines .lineColor {
+  margin-right: 0.25em;
+}
+
+.lines .lineKey {
   font-weight: normal;
   font-size: 0.75rem;
 }

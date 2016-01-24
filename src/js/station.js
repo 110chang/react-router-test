@@ -4,6 +4,7 @@
 
 import React from 'react'
 import { Link } from 'react-router'
+import { ListGroup, ListGroupItem, Table } from 'react-bootstrap'
 
 import Line from './line'
 
@@ -47,7 +48,7 @@ export default class Station extends React.Component {
           <span style={{ color: line.color }}>■</span>
           <Link to={`/line/${line.id}`}>{line.name}</Link>
         </p>
-        <table>
+        <Table>
           <tbody>
             <tr>
               <th>postal</th>
@@ -74,18 +75,18 @@ export default class Station extends React.Component {
               <td>東経{station.x}/北緯{station.y}</td>
             </tr>
           </tbody>
-        </table>
+        </Table>
         {belongs.length > 0 ?
           <section>
             <h3>その他の路線</h3>
-            <ul>
+            <ListGroup className="lines">
               {belongs.map((line) => {
-                return <li key={line.id}>
+                return <Link className="lineItem list-group-item" to={`/line/${line.id}`} key={line.id}>
                   <span style={{ color: line.color }}>■</span>
-                  <Link to={`/line/${line.id}`}>{line.name}</Link>
-                </li>
+                  {line.name}
+                </Link>
               })}
-            </ul>
+            </ListGroup>
           </section>
         : null}
         <Link to="/">Home</Link>

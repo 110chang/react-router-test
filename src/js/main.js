@@ -3,9 +3,9 @@
 'use strict';
 
 import React from 'react'
-import { StyleSheet } from 'react'
 import ReactDOM from 'react-dom'
-import { Router, Route, IndexRoute, NotFoundRoute, Link, hashHistory } from 'react-router'
+import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router'
+import { Navbar, Nav, NavItem, Grid, Row, Col } from 'react-bootstrap'
 import request from 'superagent'
 import extend from 'extend'
 
@@ -13,8 +13,6 @@ import Lines from './lines'
 import Line from './line'
 import Station from './station'
 import NotFound from './notfound'
-
-console.log(StyleSheet);
 
 class App extends React.Component {
   constructor(props) {
@@ -32,14 +30,22 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <header>
-          <h1>This is react-router sample</h1>
-        </header>
-        <article>
-          {this.props.children && React.cloneElement(this.props.children, {
-            lines: this.state.lines
-          })}
-        </article>
+        <Navbar className="my-navbar" inverse>
+          <Navbar.Header>
+            <Navbar.Brand>
+              <Link to="/">This is react-router sample</Link>
+            </Navbar.Brand>
+          </Navbar.Header>
+        </Navbar>
+        <Grid>
+          <Row>
+            <Col xs={12} md={12}>
+              {this.props.children && React.cloneElement(this.props.children, {
+                lines: this.state.lines
+              })}
+            </Col>
+          </Row>
+        </Grid>
       </div>
     );
   }
