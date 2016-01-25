@@ -7,12 +7,14 @@ import ReactDOM from 'react-dom'
 import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router'
 import { Navbar, Nav, NavItem, Grid, Row, Col } from 'react-bootstrap'
 import request from 'superagent'
-import extend from 'extend'
 
 import Lines from './lines'
 import Line from './line'
 import Station from './station'
 import NotFound from './notfound'
+
+// what's ?_k=xxxxxx in URL
+// ref. http://rackt.org/history/stable/HashHistoryCaveats.html
 
 class App extends React.Component {
   constructor(props) {
@@ -30,10 +32,12 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <Navbar className="my-navbar" inverse>
+        <Navbar fixedTop staticTop inverse>
           <Navbar.Header>
             <Navbar.Brand>
-              <Link to="/">This is react-router sample</Link>
+              <Link to="/">
+                <i className="fa fa-home"></i>
+              </Link>
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>

@@ -2,29 +2,32 @@ body {
   padding: 5em 1.5em 1.5em;
 }
 
-.my-navbar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 999;
-  width: 100%;
-  border-radius: 0;
+@media screen and (max-width: 767px) {
+  .navbar-search-input {
+    margin: 0.25em 0;
+  }
 }
 
 /* ===== partial for Lines Component ===== */
-.lines {
+.list-group-custom {
   list-style: none;
 }
 
-.lines .lineItem {
+.list-group-custom .list-group-item-custom {
   color: #06C;
 }
 
-.lines .lineColor {
+.list-group-custom .list-group-line-color {
   margin-right: 0.25em;
 }
 
-.lines .lineKey {
+.list-group-custom .list-group-line-supple {
   font-weight: normal;
   font-size: 0.75rem;
+}
+
+@media screen and (max-width: 767px) {
+  .list-group-custom .list-group-line-supple {
+    display: inline-block;
+  }
 }

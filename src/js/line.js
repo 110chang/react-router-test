@@ -62,10 +62,10 @@ export default class Line extends React.Component {
             </tr>
           </tbody>
         </Table>
-        <ListGroup className="stations">
+        <ListGroup className="list-group-custom">
           {line.stations.map((station, i) => {
-            return <Link className="stationItem list-group-item" to={`/line/${line.id}/${i}`} key={i}>
-              <span style={{ color: line.color }}>■</span>
+            return <Link className="list-group-item-custom list-group-item" to={`/line/${line.id}/${i}`} key={i}>
+              <span className="list-group-line-color" style={{ color: line.color }}>■</span>
               {station.name}
             </Link>
           })}

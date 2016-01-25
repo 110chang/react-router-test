@@ -14,7 +14,6 @@
     "babelify": "^7.2.0",
     "browser-sync": "^2.11.1",
     "browserify": "^13.0.0",
-    "extend": "^3.0.0",
     "gulp": "^3.9.0",
     "gulp-sass": "^2.1.1",
     "react": "^0.14.6",

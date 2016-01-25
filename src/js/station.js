@@ -79,10 +79,10 @@ export default class Station extends React.Component {
         {belongs.length > 0 ?
           <section>
             <h3>その他の路線</h3>
-            <ListGroup className="lines">
+            <ListGroup className="list-group-custom">
               {belongs.map((line) => {
-                return <Link className="lineItem list-group-item" to={`/line/${line.id}`} key={line.id}>
-                  <span style={{ color: line.color }}>■</span>
+                return <Link className="list-group-item-custom list-group-item" to={`/line/${line.id}`} key={line.id}>
+                  <span className="list-group-line-color" style={{ color: line.color }}>■</span>
                   {line.name}
                 </Link>
               })}
