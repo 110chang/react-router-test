@@ -33,8 +33,8 @@ export default class Station extends React.Component {
     let line = Line.findLine(this.props.lines, this.props.params.lineId);
     let station = line.stations[this.props.params.stationId] || Station.getInitialValue();
     let belongs = this.props.lines.filter((line) => {
-      return line.stations.filter((sta) => {
-        return sta.name === station.name && station.line !== line.heartrails_key;
+      return line.stations.filter((s) => {
+        return s.name === station.name && station.line !== line.heartrails_key;
       }).length > 0;
     });
 

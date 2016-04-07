@@ -9,7 +9,7 @@ import { ListGroup, ListGroupItem, Input, Button } from 'react-bootstrap'
 export default class Lines extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: "" };
+    this.state = { value: '' };
   }
   componentDidMount() {
     console.log('Lines component mounted');
@@ -19,8 +19,7 @@ export default class Lines extends React.Component {
       value: this.refs.input.getValue()
     });
   }
-  findByKeyword() {
-    let keyword = this.state.value;
+  findByKeyword(keyword) {
     return this.props.lines.filter((line) => {
       let matchName = line.name.match(keyword);
       let matchStation = line.stations.filter((s) => s.name.match(keyword)).length > 0;
@@ -28,7 +27,9 @@ export default class Lines extends React.Component {
     });
   }
   render() {
-    let filtered = this.state.value !== '' ? this.findByKeyword() : this.props.lines;
+    let filtered = this.state.value !== '' 
+      ? this.findByKeyword(this.state.value) 
+      : this.props.lines;
     let innerButton = <Button>
       <i className="fa fa-search"></i>
     </Button>;
